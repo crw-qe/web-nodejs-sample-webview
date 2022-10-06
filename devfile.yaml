@@ -14,6 +14,15 @@ components:
       mountSources: true
 
 commands:
+  - id: print-hello
+    exec:
+      label: "Print hello"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}/app
+      commandLine: "echo Hello world"
+      group:
+        kind: run
+
   - id: install-dependencies
     exec:
       label: "Install dependencies"
