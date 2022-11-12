@@ -19,7 +19,7 @@ commands:
       label: "Print hello"
       component: tools
       workingDir: ${PROJECT_SOURCE}/app
-      commandLine: "echo Hello world 8"
+      commandLine: "echo Hello world 9"
       group:
         kind: run
 
