@@ -5,15 +5,11 @@ components:
   - name: tools
     container:
       image: quay.io/devfile/universal-developer-image:ubi8-0e189d9
-      endpoints:
-        - exposure: public
-          name: nodejs
-          protocol: http
-          targetPort: 3000
-      memoryLimit: 1G
+      memoryRequest: 500Mi
+      memoryLimit: 4G
+      cpuRequest: 1000m
+      cpuLimit: 4000m
       mountSources: true
-    attributes:
-      controller.devfile.io/merge-contribution: true
 
 commands:
   - id: install-dependencies
