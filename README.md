@@ -2,6 +2,8 @@
 
 ExpressJS Sample Application
 
+<img src="images/default.png" height="50"/>
+
 # Developer Workspace
 [![Contribute](http://beta.codenvy.com/factory/resources/codenvy-contribute.svg)](http://beta.codenvy.com/f?id=r8et9w6vohmqvro8)
 
