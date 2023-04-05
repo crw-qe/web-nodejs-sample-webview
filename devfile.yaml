@@ -10,9 +10,6 @@ components:
       cpuRequest: 1000m
       cpuLimit: 4000m
       mountSources: true
-      env:
-        - name: LOCAL_RESOURCES
-          value: 'true'
 
 commands:
   - id: install-dependencies

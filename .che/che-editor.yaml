@@ -22,10 +22,6 @@ inline:
         memoryRequest: 256Mi
         cpuLimit: 500m
         cpuRequest: 30m
-        # the environment variable is not applied to devfile object
-        env:
-          - name: CDN_ENABLED
-            value: false
         endpoints:
           - name: che-code
             attributes:
