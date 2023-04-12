@@ -10,9 +10,6 @@ components:
       cpuRequest: 1000m
       cpuLimit: 4000m
       mountSources: true
-      env:
-        - name: WEBVIEW_LOCAL_RESOURCES
-          value: 'yes'
 commands:
   - id: install-dependencies
     exec:
