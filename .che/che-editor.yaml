@@ -23,8 +23,8 @@ inline:
         cpuLimit: 500m
         cpuRequest: 30m
         env:
-          - name: CDN_ENABLED
-            value: false
+          - name: WEBVIEW_LOCAL_RESOURCES
+            value: yes
         endpoints:
           - name: che-code
             attributes:
@@ -77,7 +77,7 @@ inline:
     - name: che-code-injector
       container:
         # image: quay.io/che-incubator/che-code:insiders
-        image: quay.io/vgulyy/che-code:webviews-behind-a-proxy
+        image: quay.io/vgulyy/che-code:webviews-behind-a-proxy-stable
         command:
           - /entrypoint-init-container.sh
         volumeMounts:
