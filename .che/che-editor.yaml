@@ -22,9 +22,6 @@ inline:
         memoryRequest: 256Mi
         cpuLimit: 500m
         cpuRequest: 30m
-        env:
-          - name: WEBVIEW_LOCAL_RESOURCES
-            value: yes
         endpoints:
           - name: che-code
             attributes:
