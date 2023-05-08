@@ -13,8 +13,6 @@ components:
       env:
         - name: WEBVIEW_LOCAL_RESOURCES
           value: 'true'
-        - name: WEBVIEW_SOURCES
-          value: workspace
 commands:
   - id: install-dependencies
     exec:
