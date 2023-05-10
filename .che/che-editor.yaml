@@ -6,15 +6,19 @@ inline:
     - id: init-container-command
       apply:
         component: che-code-injector
+    - id: init-che-code-command
+      exec:
+        component: che-code-runtime-description
+        commandLine: nohup /checode/entrypoint-volume.sh > /checode/entrypoint-logs.txt 2>&1 &
   events:
     preStart:
       - init-container-command
+    postStart:
+      - init-che-code-command
   components:
     - name: che-code-runtime-description
       container:
-        image: quay.io/devfile/universal-developer-image@sha256:d1709bbdfa076474f58f796026a2ed2dd3b24fea7e51ce2cc984e729663ff62c
-        command:
-          - /checode/entrypoint-volume.sh
+        image: quay.io/devfile/universal-developer-image@sha256:d4434a3944861c7a4de4570b1f56b3014c4ab1de05f5a9cf59d30d5fa4fc7154
         volumeMounts:
           - name: checode
             path: /checode
@@ -31,19 +35,8 @@ inline:
               urlRewriteSupported: true
             targetPort: 3100
             exposure: public
-            secure: true
-            protocol: http
-          - name: webviews
-            targetPort: 3100
-            exposure: public
-            secure: true
-            protocol: http
-            attributes:
-              type: webview
-              cookiesAuthEnabled: true
-              discoverable: false
-              unique: true
-              urlRewriteSupported: true
+            secure: false
+            protocol: https
           - name: code-redirect-1
             attributes:
               discoverable: false
@@ -74,7 +67,7 @@ inline:
     - name: che-code-injector
       container:
         # image: quay.io/che-incubator/che-code:insiders
-        image: quay.io/vgulyy/che-code:webviews-behind-a-proxy-stable
+        image: quay.io/vgulyy/che-code:webviews-behind-a-proxy-fixup-stable
         command:
           - /entrypoint-init-container.sh
         volumeMounts:

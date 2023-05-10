@@ -12,7 +12,7 @@ components:
       mountSources: true
       env:
         - name: WEBVIEW_LOCAL_RESOURCES
-          value: 'yes'
+          value: 'true'
 commands:
   - id: install-dependencies
     exec:
