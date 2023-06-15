@@ -80,7 +80,7 @@ inline:
     - name: che-code-injector
       container:
         # image: quay.io/che-incubator/che-code:insiders
-        image: quay.io/vgulyy/che-code:test-public-certs
+        image: quay.io/che-incubator-pull-requests/che-code:pr-243-amd64
         command:
           - /entrypoint-init-container.sh
         volumeMounts:
