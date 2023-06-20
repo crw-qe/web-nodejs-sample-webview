@@ -8,7 +8,7 @@ components:
       memoryRequest: 500Mi
       memoryLimit: 4G
       cpuRequest: 1000m
-      cpuLimit: 4000m
+      cpuLimit: 3000m
       mountSources: true
 commands:
   - id: install-dependencies
